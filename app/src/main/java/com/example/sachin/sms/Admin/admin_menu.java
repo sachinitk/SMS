@@ -19,7 +19,7 @@ public class admin_menu extends AppCompatActivity {
         add_stud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.add_stud.class));
+                startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.studnent_details.add_stud.class));
             }
         });
     }

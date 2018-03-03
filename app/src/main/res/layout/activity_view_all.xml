@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sachin.sms.Admin.view_all">
+    tools:context="com.example.sachin.sms.Admin.studnent_details.view_all">
     <TableLayout
         android:id="@+id/viewall"
         android:layout_width="600dp"

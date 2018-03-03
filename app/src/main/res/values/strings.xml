@@ -23,13 +23,10 @@
     <string name="sem">Semester</string>
     <string name="Subpro">Submit and Proceed</string>
     <string name="choosesem">Choose sem</string>
-
-
-
-
-
-
-
+    <string name="edit_basic">Edit Basic Info</string>
+    <string name="edit_result">Add or Edit Result Details</string>
+    <string name="fees_details">Update or Edit Fees Details</string>
+    <string name="notification">Message to Students</string>
     <string-array name="sem_arrays">
         <item>1</item>
         <item>2</item>

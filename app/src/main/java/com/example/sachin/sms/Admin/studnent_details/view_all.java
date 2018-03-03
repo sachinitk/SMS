@@ -1,4 +1,4 @@
-package com.example.sachin.sms.Admin;
+package com.example.sachin.sms.Admin.studnent_details;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
