@@ -92,6 +92,15 @@
             android:layout_height="wrap_content"
             android:hint="@string/phoneno." />
     </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/sem_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sem_arrays"
+        android:prompt="@id/sem_choose"
+        />
+
     <Button
     android:id="@+id/submit_proceed1"
     android:layout_width="fill_parent"

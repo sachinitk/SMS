@@ -22,5 +22,23 @@
     <string name="phoneno.">Phone No</string>
     <string name="sem">Semester</string>
     <string name="Subpro">Submit and Proceed</string>
+    <string name="choosesem">Choose sem</string>
+
+
+
+
+
+
+
+    <string-array name="sem_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
 
 </resources>
