@@ -29,6 +29,10 @@
     <string name="notification">Message to Students</string>
     <string name="cgpa">GPA on scale of 10</string>
     <string name="submit_gpa">Submit Result</string>
+    <string name="total_amount">Total Amout</string>
+    <string name="Due_amount">Due Amount</string>
+    <string name="Fees_status">Fees Status Message</string>
+    <string name="submit_fees">Submit Fees Details</string>
 
 
     <string-array name="sem_arrays">
