@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sachin.sms.Admin.studnent_details.update.edit_basic_info">
 
-</android.support.constraint.ConstraintLayout>
+
+
+   <LinearLayout
+       android:id="@+id/ll2"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <RadioGroup
+           android:id="@+id/rg_edit_basic"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <RadioButton
+               android:id="@+id/edit_stud_email"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/student_email"/>
+           <RadioButton
+               android:id="@+id/edit_stud_password"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/student_password"/>
+           <RadioButton
+               android:id="@+id/edit_stud_address"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/address"/>
+           <RadioButton
+               android:id="@+id/edit_stud_mobile"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/phoneno."/>
+
+           <Spinner
+               android:id="@+id/sem_choose"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/colorAccent"
+               android:entries="@array/sem_arrays"
+               android:popupBackground="@color/common_action_bar_splitter"
+               android:prompt="@id/sem_choose" />
+       </RadioGroup>
+
+       <EditText
+           android:id="@+id/basic_fill"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           />
+
+
+   </LinearLayout>
+
+    </RelativeLayout>
