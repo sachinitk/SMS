@@ -25,7 +25,8 @@
         <activity android:name=".Admin.admin_signup" />
         <activity android:name=".Student.student_signin" />
         <activity android:name=".Admin.admin_menu" />
-        <activity android:name=".Admin.view_all"></activity>
+        <activity android:name=".Admin.view_all" />
+        <activity android:name=".Admin.add_stud"></activity>
     </application>
 
 </manifest>

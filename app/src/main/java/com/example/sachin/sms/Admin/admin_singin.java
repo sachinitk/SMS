@@ -42,7 +42,8 @@ public class admin_singin extends AppCompatActivity {
         admin_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login();
+                //login();
+                startActivity(new Intent(admin_singin.this,admin_menu.class));
             }
         });
     }
