@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sachin.sms.Admin.studnent_details.update.edit_result">
+
+    <LinearLayout
+        android:id="@+id/llresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sub_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_fill_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/fill_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cgpa" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/submit_gpa"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_gpa"/>
+    </LinearLayout>
+
+</RelativeLayout>

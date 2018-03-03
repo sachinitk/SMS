@@ -28,7 +28,10 @@
         <activity android:name=".Admin.studnent_details.view_all" />
         <activity android:name=".Admin.studnent_details.add_stud" />
         <activity android:name=".Admin.studnent_details.Update_main" />
-        <activity android:name=".Admin.studnent_details.update.edit_basic_info"></activity>
+        <activity android:name=".Admin.studnent_details.update.edit_basic_info" />
+        <activity android:name=".Admin.studnent_details.update.edit_result" />
+        <activity android:name=".Admin.studnent_details.update.edit_fees" />
+        <activity android:name=".Admin.studnent_details.update.Notification_update"></activity>
     </application>
 
 </manifest>

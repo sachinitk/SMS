@@ -27,6 +27,10 @@
     <string name="edit_result">Add or Edit Result Details</string>
     <string name="fees_details">Update or Edit Fees Details</string>
     <string name="notification">Message to Students</string>
+    <string name="cgpa">GPA on scale of 10</string>
+    <string name="submit_gpa">Submit Result</string>
+
+
     <string-array name="sem_arrays">
         <item>1</item>
         <item>2</item>
