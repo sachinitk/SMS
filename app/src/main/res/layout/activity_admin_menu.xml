@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sachin.sms.Admin.admin_menu">
+
+
+    <Button
+        android:id="@+id/view_all_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_all"
+        />
+
+    <Button
+        android:id="@+id/add_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_stud"
+        android:layout_marginTop="@dimen/logo_w_h"/>
+
+    <Button
+        android:id="@+id/update_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_stud"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/delete_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_stud"
+        android:layout_marginTop="300dp"/>
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:layout_marginTop="400dp"/>
+
+</RelativeLayout>

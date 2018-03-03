@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SMS</string>
+    <string name="App_full">Student Management System</string>
+    <string name="admin">Admin</string>
+    <string name="student">Student</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_forgot_password">forgot Password</string>
+    <string name="Insti_Password">Institute Password</string>
+    <string name="admin_email">Email</string>
+    <string name="admin_password">Password</string>
+    <string name="student_email">Email</string>
+    <string name="student_password">Password</string>
+    <string name="view_all">View All Student</string>
+    <string name="add_stud">Add Student</string>
+    <string name="update_stud">Update Student</string>
+    <string name="delete_stud">Delete_Student</string>
+    <string name="logout">Logout</string>
+
+</resources>
