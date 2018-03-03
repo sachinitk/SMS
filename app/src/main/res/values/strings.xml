@@ -17,5 +17,10 @@
     <string name="update_stud">Update Student</string>
     <string name="delete_stud">Delete_Student</string>
     <string name="logout">Logout</string>
+    <string name="username">username</string>
+    <string name="address">Address</string>
+    <string name="phoneno.">Phone No</string>
+    <string name="sem">Semester</string>
+    <string name="Subpro">Submit and Proceed</string>
 
 </resources>
