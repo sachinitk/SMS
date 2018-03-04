@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.sachin.sms.Admin.studnent_details.update.edit_result">
 
-    <LinearLayout
-        android:id="@+id/llresult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sub_result"
@@ -30,14 +23,63 @@
         android:layout_height="wrap_content"
         android:hint="@string/cgpa" />
     </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/submit_gpa"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_gpa"/>
+        <RadioGroup
+            android:id="@+id/rg_edit_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="first Sem"/>
+            <RadioButton
+                android:id="@+id/second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="second sem"/>
+            <RadioButton
+                android:id="@+id/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="third sem"/>
+            <RadioButton
+                android:id="@+id/fourth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="fourth sem"/>
+            <RadioButton
+                android:id="@+id/fifth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="fifth Sem"/>
+            <RadioButton
+                android:id="@+id/sixth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sixth sem"/>
+            <RadioButton
+                android:id="@+id/seventh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="seventh sem"/>
+            <RadioButton
+                android:id="@+id/eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eight sem"/>
 
 
-    <Button
-        android:id="@+id/submit_gpa"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/submit_gpa"/>
+        </RadioGroup>
     </LinearLayout>
+
+
 
 </RelativeLayout>
