@@ -15,4 +15,9 @@ public class Configstu {
     public static final String stu_pass = "password";
     public static final String stu_login_url = "";
 
+    public static final String stu_total_amount  = "total_amount";
+    public static final String stu_due_amount  = "due_amount";
+    public static final String fees_msg  = "fees_message";
+
+
 }
