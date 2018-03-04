@@ -1,22 +1,30 @@
 package com.example.sachin.sms.Admin.studnent_details.update;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.sachin.sms.R;
+import com.example.sachin.sms.SupportClasses.Configstu;
+import com.example.sachin.sms.SupportClasses.RequestHandler;
+
+import java.util.HashMap;
+
+import static com.example.sachin.sms.SupportClasses.ConfigAdmin.admin_add_stud_url;
 
 public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
-    private String op1;
-    private String get_username;
+        private String get_username;
     private RadioGroup rg1;
     private EditText edit;
     private Button submit;
-    String email;
+    String email,token,text,variable;
     SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,14 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
         edit = (EditText)findViewById(R.id.basic_fill);
         submit = (Button)findViewById(R.id.submit_basic);
         actv(false);
+        text  = edit.getText().toString().trim();
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertdata();
+                Toast.makeText(getApplicationContext(),"if you want to edit more click else press backspace",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
@@ -41,23 +57,30 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
         switch (checkedId)
         {
             case  R.id.edit_stud_email:
-             change_email();
+             token = "email";
+             variable = Configstu.stu_email;
             actv(true);
             break;
             case R.id.edit_stud_mobile:
-                op1 = "call";
+                token = "mobile";
+                variable= Configstu.stu_mobile;
                 actv(true);
                 break;
             case  R.id.edit_stud_password:
-                op1 = "cpp";
+                token = "password";
+                variable = Configstu.stu_pass;
                 actv(true);
                 break;
             case  R.id.edit_stud_address:
-                op1 = "call";
+                token = "address";
+                variable= Configstu.stu_addr;
                 actv(true);
                 break;
         }
     }
+
+
+
 
     private void actv(final boolean active){
         edit.setEnabled(active);
@@ -66,9 +89,42 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
         }
     }
 
-public void change_email(){
-        email = edit.getText().toString().trim();
+    private  void insertdata() {
 
-}
+
+        class editBasic extends AsyncTask<Void,Void,String> {
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                //  loading = ProgressDialog.show(SignUp.this, "Addding....", "Waiting...", false, false);
+
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                // loading.dismiss();
+                // Toast.makeText(SignUp.this, s, Toast.LENGTH_LONG).show();
+            }
+            @Override
+            protected String doInBackground(Void... params)
+            {
+                HashMap<String,String> hashMap  =new HashMap<>();
+                //hashMap.put(Configstu.stu_name,name);
+                hashMap.put(token,variable);
+                hashMap.put(variable,text);
+                hashMap.put(Configstu.stu_username,get_username);
+
+                RequestHandler rh = new RequestHandler();
+
+                return rh.sendPostRequest(admin_add_stud_url,hashMap);
+            }
+        }
+
+        editBasic as = new editBasic();
+        as.execute();
+    }
 
 }
