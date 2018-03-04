@@ -57,7 +57,7 @@ public class admin_menu extends AppCompatActivity {
                        // Toast.makeText(getApplicationContext(),p,Toast.LENGTH_SHORT).show();
                        sharedPreferences.edit().putString(usernamef,p).commit();
 
-                        startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.studnent_details.update.edit_basic_info.class));
+                        startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.studnent_details.Update_main.class));
 
                     }
                 });
