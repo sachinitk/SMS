@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.sachin.sms.R;
+import com.example.sachin.sms.SupportClasses.ConfigAdmin;
 import com.example.sachin.sms.SupportClasses.Configstu;
 import com.example.sachin.sms.SupportClasses.RequestHandler;
 
@@ -39,12 +40,13 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
         edit = (EditText)findViewById(R.id.basic_fill);
         submit = (Button)findViewById(R.id.submit_basic);
         actv(false);
-        text  = edit.getText().toString().trim();
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                text  = edit.getText().toString().trim();
                 insertdata();
-                Toast.makeText(getApplicationContext(),"if you want to edit more click else press backspace",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"if you want to edit more click else press backspace",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -57,22 +59,22 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
         switch (checkedId)
         {
             case  R.id.edit_stud_email:
-             token = "email";
+             ///token = "email";
              variable = Configstu.stu_email;
             actv(true);
             break;
             case R.id.edit_stud_mobile:
-                token = "mobile";
+               // token = "mobile";
                 variable= Configstu.stu_mobile;
                 actv(true);
                 break;
             case  R.id.edit_stud_password:
-                token = "password";
+               // token = "password";
                 variable = Configstu.stu_pass;
                 actv(true);
                 break;
             case  R.id.edit_stud_address:
-                token = "address";
+                //token = "address";
                 variable= Configstu.stu_addr;
                 actv(true);
                 break;
@@ -106,20 +108,22 @@ public class edit_basic_info extends AppCompatActivity implements RadioGroup.OnC
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 // loading.dismiss();
-                // Toast.makeText(SignUp.this, s, Toast.LENGTH_LONG).show();
+                 Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
             }
             @Override
             protected String doInBackground(Void... params)
             {
                 HashMap<String,String> hashMap  =new HashMap<>();
                 //hashMap.put(Configstu.stu_name,name);
-                hashMap.put(token,variable);
+                //hashMap.put(token,variable);
+                hashMap.put("var",variable);
                 hashMap.put(variable,text);
+
                 hashMap.put(Configstu.stu_username,get_username);
 
                 RequestHandler rh = new RequestHandler();
 
-                return rh.sendPostRequest(admin_add_stud_url,hashMap);
+                return rh.sendPostRequest(ConfigAdmin.admin_edit_basic_url,hashMap);
             }
         }
 
