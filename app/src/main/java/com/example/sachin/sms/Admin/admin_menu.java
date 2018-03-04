@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.sachin.sms.R;
 
@@ -22,7 +23,7 @@ public class admin_menu extends AppCompatActivity {
 
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String usernamef = "usernamepref";
-    SharedPreferences.Editor sharedPreferences;
+    SharedPreferences sharedPreferences;
    LinearLayout ll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class admin_menu extends AppCompatActivity {
         setContentView(R.layout.activity_admin_menu);
         add_stud = (Button)findViewById(R.id.add_student);
        ll=(LinearLayout)findViewById(R.id.ad_roll);
-       sharedPreferences = getSharedPreferences(MyPREFERENCES,Context.MODE_PRIVATE).edit();
+       sharedPreferences = getSharedPreferences(MyPREFERENCES,Context.MODE_PRIVATE);
 
         update_stud = (Button)findViewById(R.id.update_student);
         add_stud.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +54,10 @@ public class admin_menu extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         p = et.getText().toString().trim();
-                        sharedPreferences.putString("usernamef",p);
-                        sharedPreferences.apply();;
+                       // Toast.makeText(getApplicationContext(),p,Toast.LENGTH_SHORT).show();
+                       sharedPreferences.edit().putString(usernamef,p).commit();
 
-                        startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.studnent_details.add_stud.class));
+                        startActivity(new Intent(admin_menu.this, com.example.sachin.sms.Admin.studnent_details.update.edit_basic_info.class));
 
                     }
                 });
