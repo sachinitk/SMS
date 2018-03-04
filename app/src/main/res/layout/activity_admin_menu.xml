@@ -14,31 +14,45 @@
         android:text="@string/view_all"
         />
 
+
     <Button
         android:id="@+id/add_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_stud"
-        android:layout_marginTop="@dimen/logo_w_h"/>
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/update_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/update_stud"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="80dp"/>
+
+        <LinearLayout
+            android:id="@+id/ad_roll"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_marginTop="140dp">
+
+        </LinearLayout>
+
+
+
 
     <Button
         android:id="@+id/delete_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/delete_stud"
-        android:layout_marginTop="300dp"/>
+        android:layout_marginTop="400dp"/>
     <Button
         android:id="@+id/Logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/logout"
-        android:layout_marginTop="400dp"/>
+        android:layout_marginTop="450dp"/>
+
 
 </RelativeLayout>
