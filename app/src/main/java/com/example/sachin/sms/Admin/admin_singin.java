@@ -22,6 +22,7 @@ public class admin_singin extends AppCompatActivity {
     private EditText emailText,passwordText;
     private Button admin_login;
     String email,password,ev,pv;
+    private  int p =1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +43,8 @@ public class admin_singin extends AppCompatActivity {
         admin_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //login();
-                startActivity(new Intent(admin_singin.this,admin_menu.class));
+                login();
+
             }
         });
     }
@@ -83,8 +84,9 @@ public class admin_singin extends AppCompatActivity {
                 {
                     Toast.makeText(admin_singin.this, "Login Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
                     //getData();
-                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(),admin_menu.class);
                     startActivity(i);
+                    p = 0;
 
                 }
                 else {
@@ -100,7 +102,7 @@ public class admin_singin extends AppCompatActivity {
                 //hashMap.put(Configstu.Customer_name,name);
                 hashMap.put(ConfigAdmin.admin_email,email);
                 // hashMap.put(Configstu.Customer_mobile,mbl);
-                hashMap.put(ConfigAdmin.admin_email,password);
+                hashMap.put(ConfigAdmin.admin_pass,password);
                 RequestHandler rh = new RequestHandler();
 
                 return rh.sendPostRequest(ConfigAdmin.admin_login_url,hashMap);
