@@ -20,16 +20,16 @@ import java.util.HashMap;
 
 public class admin_signup extends AppCompatActivity {
    private Button gologin,btnsingup;
-   private EditText emailText,passwordText,name,instpassword;
-   String email,password,ev,pv;
+   private EditText emailText,passwordText,nameText,instpasswordText;
+   String email,password,ev,instipassword,name,pv;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_signup);
-
-
+        nameText = (EditText) findViewById(R.id.admin_name);
+        instpasswordText = (EditText)findViewById(R.id.admin_institute_password);
         btnsingup = (Button)findViewById(R.id.admin_signup_btn);
         emailText= (EditText)findViewById(R.id.admin_email);
         passwordText = (EditText)findViewById(R.id.admin_password);
@@ -37,6 +37,8 @@ public class admin_signup extends AppCompatActivity {
         btnsingup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+           name = nameText.getText().toString().trim();
+           instipassword = instpasswordText.getText().toString().trim();
                 login();
             }
         });
@@ -84,11 +86,11 @@ public class admin_signup extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                if(s.equalsIgnoreCase("Logined"))
+                if(s.equalsIgnoreCase("Registration Successfully"))
                 {
-                    Toast.makeText(admin_signup.this, "Login Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(admin_signup.this, "signup Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
                     //getData();
-                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(),admin_menu.class);
                     startActivity(i);
 
                 }
@@ -102,13 +104,13 @@ public class admin_signup extends AppCompatActivity {
             protected String doInBackground(Void... params)
             {
                 HashMap<String,String> hashMap  =new HashMap<>();
-                //hashMap.put(Configstu.Customer_name,name);
+                hashMap.put(ConfigAdmin.admin_name,name);
                 hashMap.put(ConfigAdmin.admin_email,email);
-                // hashMap.put(Configstu.Customer_mobile,mbl);
-                hashMap.put(ConfigAdmin.admin_email,password);
+                 hashMap.put(ConfigAdmin.admin_institute_token,instipassword);
+                hashMap.put(ConfigAdmin.admin_pass,password);
                 RequestHandler rh = new RequestHandler();
 
-                return rh.sendPostRequest(ConfigAdmin.admin_login_url,hashMap);
+                return rh.sendPostRequest(ConfigAdmin.admin_signup_url,hashMap);
             }
         }
 

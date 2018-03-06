@@ -7,6 +7,8 @@ package com.example.sachin.sms.SupportClasses;
 public class ConfigAdmin {
     public static final String admin_email = "admin_email";
     public static final String admin_pass = "admin_pass";
+    public static final String admin_name = "admin_name";
+    public static final String admin_institute_token = "admin_insti_token";
 
 
 
@@ -14,8 +16,7 @@ public class ConfigAdmin {
 
 
 
-
-
+    public static final String admin_signup_url = "http://10.50.45.163/SMS/admin_signup.php";
     public static final String admin_login_url = "http://10.50.45.163/SMS/admin_login.php";
     public static final String admin_add_stud_url = "http://10.50.45.163/SMS/add_stud.php";
     public static final String admin_edit_basic_url = "http://10.50.45.163/SMS/edit_basic.php";
