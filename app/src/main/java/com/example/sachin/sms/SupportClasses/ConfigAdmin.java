@@ -22,4 +22,5 @@ public class ConfigAdmin {
     public static final String admin_edit_result_url = "http://10.50.45.163/SMS/update_result.php";
     public static final String admin_edit_fees_url = "http://10.50.45.163/SMS/edit_fess.php";
     public static final String admin_send_msg_url ="http://10.50.45.163/SMS/send_message.php";
+    public static final String admin_delete_stu_url = "http://10.50.45.163/SMS/delete_student.php";
 }

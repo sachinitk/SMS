@@ -1,8 +1,10 @@
 package com.example.sachin.sms.Admin;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +16,22 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.sachin.sms.R;
+import com.example.sachin.sms.SupportClasses.ConfigAdmin;
+import com.example.sachin.sms.SupportClasses.Configstu;
+import com.example.sachin.sms.SupportClasses.RequestHandler;
+
+import java.util.HashMap;
 
 public class admin_menu extends AppCompatActivity {
-    private Button add_stud ;
-    private  Button update_stud;
-    private EditText et;
-    String p;
+
+    private  Button update_stud,add_stud,delete_stud,bt,bt2;
+    private EditText et,et2;
+    private String p,dp;
 
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String usernamef = "usernamepref";
     SharedPreferences sharedPreferences;
-   LinearLayout ll;
+   LinearLayout ll,ll1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +54,7 @@ public class admin_menu extends AppCompatActivity {
                 et = new EditText(getApplicationContext());
 
                 ll.addView(et);
-                Button bt = new Button(getApplicationContext());
+                bt = new Button(getApplicationContext());
                 bt.setText("Proceed");
                 ll.addView(bt);
                 bt.setOnClickListener(new View.OnClickListener() {
@@ -65,5 +72,66 @@ public class admin_menu extends AppCompatActivity {
         });
        // setContentView(ll);
 
+        // delete student picture
+
+        ll1 = (LinearLayout)findViewById(R.id.delete_roll);
+        delete_stud = (Button)findViewById(R.id.delete_student);
+
+        delete_stud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                et2 = new EditText(getApplicationContext());
+                ll1.addView(et2);
+                bt2 = new Button(getApplicationContext());
+                bt2.setText("Proceed to delete");
+                ll1.addView(bt2);
+                bt2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dp = et2.getText().toString().trim();
+                       // Toast.makeText(getApplicationContext(),dp, Toast.LENGTH_LONG).show();
+
+                        insertdata();
+
+                    }
+                });
+            }
+        });
+
+    }
+
+    private  void insertdata() {
+
+
+        class delete_student extends AsyncTask<Void,Void,String> {
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                //  loading = ProgressDialog.show(SignUp.this, "Addding....", "Waiting...", false, false);
+
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                // loading.dismiss();
+                Toast.makeText(getApplicationContext(),dp, Toast.LENGTH_LONG).show();
+            }
+            @Override
+            protected String doInBackground(Void... params)
+            {
+                HashMap<String,String> hashMap  =new HashMap<>();
+                hashMap.put(Configstu.stu_username,dp);
+
+                RequestHandler rh = new RequestHandler();
+
+                return rh.sendPostRequest(ConfigAdmin.admin_delete_stu_url,hashMap);
+            }
+        }
+
+        delete_student as = new delete_student();
+        as.execute();
     }
 }
