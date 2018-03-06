@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sachin.sms.Student.stu_main">
+    <Button
+        android:id="@+id/view_basic_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_basic"
+        />
+
+
+    <Button
+        android:id="@+id/view_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_result"
+        android:layout_marginTop="60dp"/>
+
+    <Button
+        android:id="@+id/view_fees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_fees"
+        android:layout_marginTop="120dp"/>
+
+    <Button
+        android:id="@+id/view_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_attendece"
+        android:layout_marginTop="180dp"/>
+
+
+    <Button
+        android:id="@+id/view_timetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_timetable"
+        android:layout_marginTop="240dp"/>
+
+    <Button
+        android:id="@+id/view_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_Message"
+        android:layout_marginTop="300dp"/>
+    <Button
+        android:id="@+id/stud_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:layout_marginTop="360dp"/>
+
+
+</RelativeLayout>

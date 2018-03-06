@@ -32,7 +32,8 @@
         <activity android:name=".Admin.studnent_details.update.edit_result" />
         <activity android:name=".Admin.studnent_details.update.edit_fees" />
         <activity android:name=".Admin.studnent_details.update.Notification_update" />
-        <activity android:name=".Admin.studnent_details.delete_student"></activity>
+        <activity android:name=".Admin.studnent_details.delete_student" />
+        <activity android:name=".Student.stu_main"></activity>
     </application>
 
 </manifest>

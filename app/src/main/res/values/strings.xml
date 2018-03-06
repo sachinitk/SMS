@@ -33,6 +33,12 @@
     <string name="Due_amount">Due Amount</string>
     <string name="Fees_status">Fees Status Message</string>
     <string name="submit_fees">Submit Fees Details</string>
+    <string name="view_basic">View Basic Details</string>
+    <string name="view_result">View Result</string>
+    <string name="view_fees">View fees details</string>
+    <string name="view_attendece">View Attendance</string>
+    <string name="view_timetable">View Time Table</string>
+    <string name="view_Message">View Message from Teacher</string>
 
 
     <string-array name="sem_arrays">
