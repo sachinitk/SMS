@@ -13,7 +13,7 @@ public class Configstu {
     public static final String stu_sem  = "semester" ;
     public static final String stu_email = "email";
     public static final String stu_pass = "password";
-    public static final String stu_login_url = "http://10.100.52.226/SMS/stu_login.php";
+    public static final String stu_login_url = "http://10.50.47.178/SMS/stu_login.php";
 
     public static final String stu_total_amount  = "total_amount";
     public static final String stu_due_amount  = "due_amount";

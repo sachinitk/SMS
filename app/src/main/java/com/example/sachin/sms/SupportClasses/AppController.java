@@ -1,6 +1,7 @@
 package com.example.sachin.sms.SupportClasses;
 
 import android.app.Application;
+import android.content.Context;
 import android.text.TextUtils;
 
 
@@ -15,27 +16,37 @@ import com.android.volley.toolbox.Volley;
  */
 
 
-    public class AppController extends Application {
+    public class AppController  {
         public static final String TAG = AppController.class.getSimpleName();
 
         private RequestQueue mRequestQueue;
         private ImageLoader mImageLoader;
+        private static Context mCtx;
 
         private static AppController mInstance;
 
-        @Override
+        private AppController(Context context){
+            mCtx = context;
+            mRequestQueue = getRequestQueue();
+            mImageLoader = getImageLoader();
+        }
+
+       /* @Override
         public void onCreate() {
             super.onCreate();
             mInstance = this;
         }
+        */
 
-        public static synchronized AppController getInstance() {
+        public static synchronized AppController getInstance(Context context) {
+            if(mInstance == null)
+                mInstance = new AppController(context);
             return mInstance;
         }
 
         public RequestQueue getRequestQueue() {
             if (mRequestQueue == null) {
-                mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+                mRequestQueue = Volley.newRequestQueue(mCtx.getApplicationContext());
             }
 
             return mRequestQueue;

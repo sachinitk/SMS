@@ -39,4 +39,83 @@
             />
     </TableRow>
 
+
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="Username"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/stud_username"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/student_email"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/stud_email"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/student_password"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/stud_password"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/address"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/stud_address"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/phoneno."
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/stud_mobile"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+
 </TableLayout>

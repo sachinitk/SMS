@@ -10,11 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.example.sachin.sms.MainActivity;
 import com.example.sachin.sms.R;
+import com.example.sachin.sms.SupportClasses.AppController;
 import com.example.sachin.sms.SupportClasses.Configstu;
 import com.example.sachin.sms.SupportClasses.RequestHandler;
 import com.example.sachin.sms.SupportClasses.ValidationClass;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -35,6 +44,7 @@ public class student_signin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login();
+
             }
         });
     }
@@ -72,37 +82,89 @@ public class student_signin extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                if(s.equalsIgnoreCase("Logined"))
-                {
+                if (s.equalsIgnoreCase("Logined")) {
                     Toast.makeText(student_signin.this, "Login Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
-                    //getData();
-                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    getData();
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(i);
 
-                }
-                else {
+                } else {
                     Toast.makeText(student_signin.this, s, Toast.LENGTH_LONG).show();
                 }
             }
 
 
             @Override
-            protected String doInBackground(Void... params)
-            {
-                HashMap<String,String> hashMap  =new HashMap<>();
+            protected String doInBackground(Void... params) {
+                HashMap<String, String> hashMap = new HashMap<>();
                 //hashMap.put(Configstu.Customer_name,name);
-                hashMap.put(Configstu.stu_email,email);
+                hashMap.put(Configstu.stu_email, email);
                 // hashMap.put(Configstu.Customer_mobile,mbl);
-                hashMap.put(Configstu.stu_pass,password);
+                hashMap.put(Configstu.stu_pass, password);
                 RequestHandler rh = new RequestHandler();
 
-                return rh.sendPostRequest(Configstu.stu_login_url,hashMap);
+                return rh.sendPostRequest(Configstu.stu_login_url, hashMap);
             }
         }
 
-        AuthoLogin  al = new AuthoLogin();
+        AuthoLogin al = new AuthoLogin();
         al.execute();
 
 
-        }
     }
+
+
+    public void getData() {
+        String url  = "http://10.50.47.178/SMS/fetch_all.php?email=sachinitk@gmail.com";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                       // pd.hide();
+
+
+                        try {
+
+                            JSONArray jsonarray = new JSONArray(response);
+
+                            for(int i=0; i < jsonarray.length(); i++) {
+
+                                JSONObject jsonobject = jsonarray.getJSONObject(i);
+
+
+                                String id = jsonobject.getString("name");
+                                Toast.makeText(getApplicationContext(),id,Toast.LENGTH_LONG).show();
+
+                               // result.setText(" ID -"+id+"\n Price -"+price+"\n Name -"+name+"\n Phone -"+phone);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+
+                        }
+
+
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if (error != null) {
+
+                            Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+        );
+        AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+    }
+
+
+
+
+}
