@@ -23,10 +23,10 @@ import static com.example.sachin.sms.SupportClasses.ConfigAdmin.*;
 
 public class add_stud extends AppCompatActivity {
     private Button subpro ;
-    private EditText stud_name,stud_email,stud_password,stud_username,stud_addr,
+    private EditText stud_name,stud_email,stud_username,stud_addr,
                         stud_mobile;
     private Spinner sem;
-    String name,email,username,password,addr,mobile,semester;
+    String name,email,username,addr,mobile,semester;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class add_stud extends AppCompatActivity {
 
         stud_name = (EditText)findViewById(R.id.stud_add_name);
         stud_email = (EditText)findViewById(R.id.add_stud_email);
-        stud_password = (EditText)findViewById(R.id.add_stud_password);
+       // stud_password = (EditText)findViewById(R.id.add_stud_password);
         stud_username = (EditText)findViewById(R.id.stud_add_username);
         stud_addr = (EditText)findViewById(R.id.add_stud_address);
         stud_mobile = (EditText)findViewById(R.id.add_stud_mobile);
@@ -56,7 +56,7 @@ public class add_stud extends AppCompatActivity {
     private  void insertdata(){
         name = stud_name.getText().toString().trim();
         email = stud_email.getText().toString().trim();
-        password = stud_password.getText().toString().trim();
+        //password = stud_password.getText().toString().trim();
         username = stud_username.getText().toString().trim();
         mobile = stud_mobile.getText().toString().trim();
         addr = stud_addr.getText().toString().trim();
@@ -84,7 +84,7 @@ public class add_stud extends AppCompatActivity {
                hashMap.put(Configstu.stu_name,name);
                hashMap.put(Configstu.stu_email,email);
                 hashMap.put(Configstu.stu_username,username);
-                hashMap.put(Configstu.stu_pass,password);
+              //  hashMap.put(Configstu.stu_pass,password);
                 hashMap.put(Configstu.stu_addr,addr);
                 hashMap.put(Configstu.stu_mobile,mobile);
                 hashMap.put(Configstu.stu_sem,semester);
