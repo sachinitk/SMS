@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    tools:context="com.example.sachin.sms.Student.view_fees_details">
+
+    <TableRow
+        android:padding="5dip">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_span="2"
+            android:gravity="center_horizontal"
+            android:text="@string/view_fees_details"
+            android:textColor="#0bb"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="Total amount"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/total_amnt_view"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+
+
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="Due Amount"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/due_amnt_view"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="Fees Message"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/fees_message_view"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            />
+    </TableRow>
+
+
+</TableLayout>

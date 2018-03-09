@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.sachin.sms.R;
+import com.example.sachin.sms.SupportClasses.DownloadTask;
 
 public class stu_main extends AppCompatActivity {
      private Button view_basic, view_fees, view_result, view_message, view_attendance, view_time_table, stu_logout;
+
+     String URL = "http://10.50.46.108/SMS/down.pdf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class stu_main extends AppCompatActivity {
         view_fees.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(stu_main.this,stu_main.class));
+                startActivity(new Intent(stu_main.this,view_fees_details.class));
             }
         });
         view_result = (Button) findViewById(R.id.view_result);
@@ -54,7 +57,8 @@ public class stu_main extends AppCompatActivity {
         view_time_table.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(stu_main.this,stu_main.class));
+                //startActivity(new Intent(stu_main.this,stu_main.class));
+                new DownloadTask(stu_main.this, URL);
             }
         });
         stu_logout = (Button) findViewById(R.id.stud_logout);

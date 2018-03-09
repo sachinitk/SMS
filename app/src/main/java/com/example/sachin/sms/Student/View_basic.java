@@ -41,7 +41,8 @@ public class View_basic extends AppCompatActivity {
         stud_semester = (TextView)findViewById(R.id.stud_semester);
         stud_semester.setText(semester);
 
-        mobile = sh.getString("val4",null);
+        mobile = sh.getString("val4",null
+        );
         stud_mobile = (TextView)findViewById(R.id.stud_mobile);
         stud_mobile.setText(mobile);
 

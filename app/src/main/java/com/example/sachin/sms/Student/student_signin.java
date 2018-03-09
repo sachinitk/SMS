@@ -182,7 +182,7 @@ public class student_signin extends AppCompatActivity {
                                 editor.putString("val8",due_amnt);
 
                                 fees_message = jsonobject.getString("fee_message");
-
+                                editor.putString("val9",fees_message);
                                 sem1 = jsonobject.getString("sem1");
 
                                 sem2 = jsonobject.getString("sem2");

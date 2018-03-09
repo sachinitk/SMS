@@ -39,6 +39,7 @@
     <string name="view_attendece">View Attendance</string>
     <string name="view_timetable">View Time Table</string>
     <string name="view_Message">View Message from Teacher</string>
+    <string name="view_fees_details">View fees Details</string>
 
 
     <string-array name="sem_arrays">
