@@ -126,7 +126,7 @@ public class student_signin extends AppCompatActivity {
 
 
     public void getData() {
-        String url  = "http://10.50.46.108/SMS/fetch_all.php?email=sachinitk@gmail.com";
+        String url  = "http://10.50.46.108/SMS/fetch_all.php?email="+email;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
