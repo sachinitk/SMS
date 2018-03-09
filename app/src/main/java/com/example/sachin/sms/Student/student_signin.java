@@ -173,7 +173,7 @@ public class student_signin extends AppCompatActivity {
                                 semester = jsonobject.getString("sem");
                                 editor.putString("val5",semester);
                                 message = jsonobject.getString("indi_msg");
-                                editor.putString("val16",message);
+                                editor.putString("val6",message);
 
                                 total_amnt= jsonobject.getString("total_amnt");
                                 editor.putString("val7",total_amnt);

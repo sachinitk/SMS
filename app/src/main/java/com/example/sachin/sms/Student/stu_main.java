@@ -1,6 +1,9 @@
 package com.example.sachin.sms.Student;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,7 @@ import com.example.sachin.sms.SupportClasses.DownloadTask;
 
 public class stu_main extends AppCompatActivity {
      private Button view_basic, view_fees, view_result, view_message, view_attendance, view_time_table, stu_logout;
+     final Context context =this;
 
      String URL = "http://10.50.46.108/SMS/down.pdf";
 
@@ -43,7 +47,16 @@ public class stu_main extends AppCompatActivity {
         view_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(stu_main.this,stu_main.class));
+                //startActivity(new Intent(stu_main.this,stu_main.class));
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        context);
+                SharedPreferences sh = getApplicationContext().getSharedPreferences("Sach",MODE_PRIVATE);
+                String p = sh.getString("val6",null);
+                alertDialogBuilder.setTitle(p);
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+
             }
         });
         view_attendance = (Button) findViewById(R.id.view_attendance);
