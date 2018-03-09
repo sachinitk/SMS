@@ -1,7 +1,9 @@
 package com.example.sachin.sms.Student;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,19 +32,28 @@ import java.util.HashMap;
 public class student_signin extends AppCompatActivity {
     private EditText emailText, passwordText;
     private Button login;
-    private String email, password, ev, pv;
+     String email, password, ev, pv;
+    String username,name,adress,mobile,message,sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8,total_amnt,due_amnt,fees_message,semester;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_signin);
+
         emailText = (EditText) findViewById(R.id.studemt_email);
         passwordText = (EditText) findViewById(R.id.student_password);
         login = (Button) findViewById(R.id.studemt_login_btn);
 
+
+
+
+
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 login();
 
             }
@@ -85,7 +96,7 @@ public class student_signin extends AppCompatActivity {
                 if (s.equalsIgnoreCase("Logined")) {
                     Toast.makeText(student_signin.this, "Login Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
                     getData();
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(), stu_main.class);
                     startActivity(i);
 
                 } else {
@@ -115,7 +126,7 @@ public class student_signin extends AppCompatActivity {
 
 
     public void getData() {
-        String url  = "http://10.50.47.178/SMS/fetch_all.php?email=sachinitk@gmail.com";
+        String url  = "http://10.50.46.108/SMS/fetch_all.php?email=sachinitk@gmail.com";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -133,10 +144,63 @@ public class student_signin extends AppCompatActivity {
                                 JSONObject jsonobject = jsonarray.getJSONObject(i);
 
 
-                                String id = jsonobject.getString("name");
-                                Toast.makeText(getApplicationContext(),id,Toast.LENGTH_LONG).show();
+                                name  = jsonobject.getString("name");
 
-                               // result.setText(" ID -"+id+"\n Price -"+price+"\n Name -"+name+"\n Phone -"+phone);
+                                username = jsonobject.getString("username");
+
+                                SharedPreferences pref = getApplicationContext().getSharedPreferences("Sach",MODE_PRIVATE);
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putString("val0",email);
+                                editor.putString("val1",name);
+                                editor.putString("val2",username);
+
+
+
+                                //String  ac = pref.getString("val1",null);
+                                //Toast.makeText(getApplicationContext(),ac,Toast.LENGTH_SHORT).show();
+
+
+
+                               // pref.edit().putString(username,"username").commit();
+                               // String s = pref.getString("username",null);
+                                adress = jsonobject.getString("address");
+                                editor.putString("val3",adress);
+                                mobile = jsonobject.getString("phone");
+                                editor.putString("val4",mobile);
+
+                               // Toast.makeText(student_signin.this, s, Toast.LENGTH_LONG).show();
+
+                                semester = jsonobject.getString("sem");
+                                editor.putString("val5",semester);
+                                message = jsonobject.getString("indi_msg");
+                                editor.putString("val16",message);
+
+                                total_amnt= jsonobject.getString("total_amnt");
+                                editor.putString("val7",total_amnt);
+
+                                due_amnt = jsonobject.getString("due_amnt");
+                                editor.putString("val8",due_amnt);
+
+                                fees_message = jsonobject.getString("fee_message");
+
+                                sem1 = jsonobject.getString("sem1");
+
+                                sem2 = jsonobject.getString("sem2");
+
+                                sem3 = jsonobject.getString("sem3");
+
+                                sem4 = jsonobject.getString("sem4");
+
+                                sem5 = jsonobject.getString("sem5");
+
+                                sem6 = jsonobject.getString("sem6");
+
+                                sem7 = jsonobject.getString("sem7");
+
+                                sem8 = jsonobject.getString("sem8");
+
+
+                                editor.commit();
 
                             }
                         } catch (JSONException e) {

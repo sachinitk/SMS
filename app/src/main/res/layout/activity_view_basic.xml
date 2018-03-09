@@ -76,11 +76,11 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_column="0"
-            android:text="@string/student_password"
+            android:text="@string/sem"
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/stud_password"
+            android:id="@+id/stud_semester"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_marginLeft="15dp"

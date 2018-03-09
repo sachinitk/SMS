@@ -19,7 +19,7 @@ public class stu_main extends AppCompatActivity {
         view_basic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(stu_main.this,stu_main.class));
+                startActivity(new Intent(stu_main.this,View_basic.class));
             }
         });
         view_fees = (Button) findViewById(R.id.view_fees);
