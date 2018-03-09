@@ -40,7 +40,7 @@ public class stu_main extends AppCompatActivity {
         view_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(stu_main.this,stu_main.class));
+                startActivity(new Intent(stu_main.this, com.example.sachin.sms.Student.view_result.class));
             }
         });
         view_message = (Button) findViewById(R.id.view_message);

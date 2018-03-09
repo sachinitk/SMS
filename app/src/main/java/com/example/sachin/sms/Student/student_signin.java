@@ -184,20 +184,28 @@ public class student_signin extends AppCompatActivity {
                                 fees_message = jsonobject.getString("fee_message");
                                 editor.putString("val9",fees_message);
                                 sem1 = jsonobject.getString("sem1");
+                                editor.putString("val10",sem1);
 
                                 sem2 = jsonobject.getString("sem2");
+                                editor.putString("val11",sem2);
 
                                 sem3 = jsonobject.getString("sem3");
+                                editor.putString("val12",sem3);
 
                                 sem4 = jsonobject.getString("sem4");
+                                editor.putString("val13",sem4);
 
                                 sem5 = jsonobject.getString("sem5");
+                                editor.putString("val14",sem5);
 
                                 sem6 = jsonobject.getString("sem6");
+                                editor.putString("val15",sem6);
 
                                 sem7 = jsonobject.getString("sem7");
+                                editor.putString("val16",sem7);
 
                                 sem8 = jsonobject.getString("sem8");
+                                editor.putString("val17",sem8);
 
 
                                 editor.commit();
