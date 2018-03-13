@@ -20,6 +20,10 @@ $sql = "insert into student (name,username,email,address,phone,sem) values
 
 if ($con->query($sql) === TRUE) {
 	$passset = "UPDATE student SET password = MD5(RAND()) WHERE username = '$username'";
+	$updatefees = "insert into fees(username) value('$username')";
+	$updateresult = "insert into result(username) value('$username')";
+		$con->query($updatefees);
+		$con->query($updateresult);
 	if($con->query($passset) === TRUE)
 		{
 		$getpassql = "select password from student where username = '$username'";
