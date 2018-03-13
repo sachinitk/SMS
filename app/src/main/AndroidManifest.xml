@@ -23,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:noHistory="true"/>
         <activity android:name=".Admin.admin_singin" />
         <activity android:name=".Admin.admin_signup" />
         <activity android:name=".Student.student_signin" />

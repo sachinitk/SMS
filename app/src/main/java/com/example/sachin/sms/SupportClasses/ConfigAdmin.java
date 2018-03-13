@@ -16,12 +16,12 @@ public class ConfigAdmin {
 
 
 
-    public static final String admin_signup_url = "http://10.50.46.108/SMS/admin_signup.php";
-    public static final String admin_login_url = "http://10.50.46.108/SMS/admin_login.php";
-    public static final String admin_add_stud_url = "http://10.50.46.108/SMS/add_stud.php";
-    public static final String admin_edit_basic_url = "http://10.50.46.108/SMS/edit_basic.php";
-    public static final String admin_edit_result_url = "http://10.50.46.108/SMS/update_result.php";
-    public static final String admin_edit_fees_url = "http://10.50.46.108/SMS/edit_fess.php";
-    public static final String admin_send_msg_url ="http://10.50.46.108/SMS/send_message.php";
-    public static final String admin_delete_stu_url = "http://10.50.46.108/SMS/delete_student.php";
+    public static final String admin_signup_url = "http://10.50.45.193/SMS/admin_signup.php";
+    public static final String admin_login_url = "http://10.50.45.193/SMS/admin_login.php";
+    public static final String admin_add_stud_url = "http://10.50.45.193/SMS/add_stud.php";
+    public static final String admin_edit_basic_url = "http://10.50.45.193/SMS/edit_basic.php";
+    public static final String admin_edit_result_url = "http://10.50.45.193/SMS/update_result.php";
+    public static final String admin_edit_fees_url = "http://10.50.45.193/SMS/edit_fess.php";
+    public static final String admin_send_msg_url ="http://10.50.45.193/SMS/send_message.php";
+    public static final String admin_delete_stu_url = "http://10.50.45.193/SMS/delete_student.php";
 }

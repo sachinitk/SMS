@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,18 +16,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.sachin.sms.MainActivity;
 import com.example.sachin.sms.R;
 import com.example.sachin.sms.SupportClasses.ConfigAdmin;
 import com.example.sachin.sms.SupportClasses.Configstu;
 import com.example.sachin.sms.SupportClasses.RequestHandler;
 
 import java.util.HashMap;
+import java.util.prefs.Preferences;
 
 public class admin_menu extends AppCompatActivity {
 
-    private  Button update_stud,add_stud,delete_stud,bt,bt2;
+    private  Button update_stud,add_stud,delete_stud,bt,bt2,logout;
     private EditText et,et2;
-    private String p,dp;
+    private String p,dp,spemail;
 
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String usernamef = "usernamepref";
@@ -97,7 +100,36 @@ public class admin_menu extends AppCompatActivity {
                 });
             }
         });
+        SharedPreferences getAdmin = getApplicationContext().getSharedPreferences("adminLogin",MODE_PRIVATE);
+        spemail =  getAdmin.getString("email",null);
 
+        logout = (Button)findViewById(R.id.Logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences getAdmin1 = getApplicationContext().getSharedPreferences("adminLogin",MODE_PRIVATE);
+                SharedPreferences.Editor de = getAdmin1.edit();
+
+                de.clear();
+                de.commit();
+                String p = getAdmin1.getString("email",null);
+                Toast.makeText(getApplicationContext(),p,Toast.LENGTH_SHORT);
+                startActivity(new Intent(admin_menu.this, MainActivity.class));
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        if(spemail != null) {
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
+        }
     }
 
     private  void insertdata() {

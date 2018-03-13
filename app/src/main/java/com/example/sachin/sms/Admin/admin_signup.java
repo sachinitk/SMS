@@ -19,7 +19,7 @@ import com.example.sachin.sms.SupportClasses.ValidationClass;
 import java.util.HashMap;
 
 public class admin_signup extends AppCompatActivity {
-   private Button gologin,btnsingup;
+   private  Button gologin,btnsingup;
    private EditText emailText,passwordText,nameText,instpasswordText;
    String email,password,ev,instipassword,name,pv;
 

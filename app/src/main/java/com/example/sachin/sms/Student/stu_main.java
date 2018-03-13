@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.sachin.sms.MainActivity;
 import com.example.sachin.sms.R;
 import com.example.sachin.sms.SupportClasses.DownloadTask;
 
@@ -59,13 +60,14 @@ public class stu_main extends AppCompatActivity {
 
             }
         });
+        /*
         view_attendance = (Button) findViewById(R.id.view_attendance);
         view_attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(stu_main.this,stu_main.class));
             }
-        });
+        });*/
         view_time_table = (Button) findViewById(R.id.view_timetable);
         view_time_table.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +77,12 @@ public class stu_main extends AppCompatActivity {
             }
         });
         stu_logout = (Button) findViewById(R.id.stud_logout);
+        stu_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(stu_main.this, MainActivity.class));
+            }
+        });
 
 
     }

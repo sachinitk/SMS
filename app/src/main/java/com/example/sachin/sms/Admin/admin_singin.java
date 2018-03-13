@@ -2,6 +2,7 @@ package com.example.sachin.sms.Admin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,14 +22,19 @@ import java.util.HashMap;
 public class admin_singin extends AppCompatActivity {
     private EditText emailText,passwordText;
     private Button admin_login;
-    String email,password,ev,pv;
+    String email,password,ev,pv,spemail;
     private  int p =1;
+    private static long back_pressed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_singin);
 
         Button go_Signup = (Button)findViewById(R.id.admin_gosignup_btn);
+
+
+
 
         go_Signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +53,11 @@ public class admin_singin extends AppCompatActivity {
 
             }
         });
+
+
     }
+
+
     public void login() {
         ValidationClass vc = new ValidationClass();
         email = emailText.getText().toString().trim();
@@ -84,6 +94,10 @@ public class admin_singin extends AppCompatActivity {
                 {
                     Toast.makeText(admin_singin.this, "Login Sucessfull!Welcome", Toast.LENGTH_SHORT).show();
                     //getData();
+                    SharedPreferences adminLogin = getApplicationContext().getSharedPreferences("adminLogin",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = adminLogin.edit();
+                    editor.putString("email",email);
+                    editor.commit();
                     Intent i = new Intent(getApplicationContext(),admin_menu.class);
                     startActivity(i);
                     p = 0;
